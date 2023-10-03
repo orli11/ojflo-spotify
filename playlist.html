@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>My PlayList 🎧</title>
+  </head>
+  <body>
+    <!-- <div style="width: 100%; height: 100vh; background-color: black; display: flex;">
+    </div> -->
+    <div style="width: 100%; height: 100vh; background-color: black; display: flex;">
+      <div class="col-3 m-2 ">
+          <div class="row ms-2">
+              <div class="card mt-2" style="width: 100%; background-color:#121212; color: #ffffff;">
+                  <div class="card-body">
+                    <a href="index.html" class="logo">
+                      <p>
+                        <i class="bi bi-spotify fs-4"></i>
+                        <span class="ms-1">Spotify</span>
+                      </p>
+                    </a>
+
+                    <a href="index.html" class="logo">
+                      <p class="iconoIni">
+                        <i class="bi bi-house fs-5"></i>
+                        <span class="ms-1">Inicio</span>
+                      </p>
+                    </a>
+                    
+                    
+                    <p class="iconoIni">
+                      <i class="bi bi-search fs-5"></i>
+                      <span class="ms-1">Buscar</span>
+                    </p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row ms-2">
+              <div class="card mt-2" style="width: 100%; background-color:#121212;">
+
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-10">
+                              <p class="iconoIni">
+                                  <i class="bi bi-collection-play-fill fs-5"></i>
+                                  <span class="ms-3">Tu bilioteca</span>
+                                </p>
+                          </div>
+                          <div class="col-2 iconoIni">
+                              <i class="bi bi-plus-circle fs-4"></i>
+                          </div>
+                      </div>
+
+                      <div class="row ms-2">
+                          <div class="card mt-2" style="width: 100%; background-color:#242424; color: #ffffff;">
+                              <div class="card-body">
+                                  <p class="fs-5 fw-normal">Crea tu primer playlist</p>
+                                  <p class="fs-6 fw-light">¡Es muy fácil! Te podemos ayudar</p>
+                              </div>
+                          </div>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+
+          <div class="row ms-2">
+              <div class="card mt-2" style="width: 100%; background-color:#121212;">
+                  <div class="card-body">
+                    Card
+                  </div>
+              </div>
+          </div>          
+      </div>
+
+      <div class="col-9 m-2 myPlaylistY">
+        <div class="navTop navbar-expand-md">
+          <div class="actions">
+            <div class="left">
+              <i class="bi bi-chevron-left"></i>
+            </div>
+            <div class="right">
+              <i class="bi bi-chevron-right"></i>
+            </div>
+          </div>
+          <div class="buttons">
+            <span class="register">Registrate</span>
+            <span class="login rounded-pill">Iniciar Sesión</span>
+          </div>
+        </div>
+
+  
+        <div class="content m-1">
+          <div class="card mb-3" style="max-width: 95%; background-color: #181818; color:#ffffff;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="h1 card-title text-center" id="name">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <div class="content">
+          <div class="row myPlaylistY" id="listSongs"></div>
+        </div>
+
+        
+
+        <template id="cardSongs">
+          <div class="content m-1">
+            <div class="card" style="max-width: 95%; background-color: #181818; color:#ffffff;">
+              <div class="row g-0">
+                <div class="col-1 align-self-center">
+                  <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-8">
+                  <div class="card-body" id="bodySongs">
+                    <h5 class="h4 card-title" onclick="openPlaylist(event)" id="nameSong">Card title</h5>
+                    <p class="h6 card-text " id="artists">Body</p>
+                  </div>
+                </div>
+                <div class="col-3 align-self-center">
+                  <p class="h6 card-text" id="duration_ms">Body</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <footer class="fixed-bottom ">
+          <div class="content">
+            <div class="card" style="max-width: 100%; background-color: #181818; color:#ffffff;">
+              <div class="row g-0">
+                  <div class="h2 card-body text-center ">
+                    <i class="bi bi-caret-left-fill"></i>
+                    <i class="bi bi-play-circle-fill"></i>
+                    <i class="bi bi-caret-right-fill"></i>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+       
+
+      </div>
+      
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./js/playlist.js"></script>
+  </body>
+</html>
