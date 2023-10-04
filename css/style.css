@@ -100,3 +100,12 @@
     overflow-y: scroll!important;
     flex-wrap: nowrap;
 }
+
+/*footer*/
+.reproductor {
+    text-decoration: none;
+    color: #ffffff;
+}
+.reproductorSimbolo:hover {
+    color:#1cd760
+}

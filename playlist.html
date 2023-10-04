@@ -101,14 +101,13 @@
         <div class="content m-1">
           <div class="card mb-3" style="max-width: 95%; background-color: #181818; color:#ffffff;">
             <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="...">
+              <div class="col-md-4 imgPlaylist">
+                <img src="" class="img-fluid rounded-start" alt="..."  id="albumImage">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="h1 card-title text-center" id="name">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <h5 class="h1 card-title text-center"  id="albumTitle">Card title</h5>
+                  <p class="card-text"  id="albumDescription">content</p>
                 </div>
               </div>
             </div>
@@ -143,13 +142,19 @@
         </template>
 
         <footer class="fixed-bottom ">
-          <div class="content">
+          <div class="content fs-1">
             <div class="card" style="max-width: 100%; background-color: #181818; color:#ffffff;">
               <div class="row g-0">
-                  <div class="h2 card-body text-center ">
-                    <i class="bi bi-caret-left-fill"></i>
-                    <i class="bi bi-play-circle-fill"></i>
-                    <i class="bi bi-caret-right-fill"></i>
+                  <div class="fs-1 card-body text-center ">
+                    <a class="reproductor" href="#">
+                      <i class="reproductorSimbolo bi bi-caret-left-fill"></i>
+                    </a>
+                    <a class="reproductor" href="#">
+                      <i class="reproductorSimbolo bi bi-play-circle-fill"></i>
+                    </a>
+                    <a class="reproductor" href="#">
+                      <i class="reproductorSimbolo bi bi-caret-right-fill"></i>
+                    </a>
                   </div>
               </div>
             </div>

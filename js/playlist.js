@@ -5,6 +5,8 @@ const id = params.get('id');
 const listaCanciones = document.getElementById('listSongs');
 const templateCard = document.getElementById('cardSongs').content;
 const fragment = document.createDocumentFragment();
+
+const infoplaylist = {};
 const banerPlaylist = document.getElementById('cardInfo');
 
 
@@ -14,6 +16,7 @@ let playlistFound = {};
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchPlaylist()
+    infoAlbum()
 });
 
 const fetchPlaylist = async() => {
@@ -48,4 +51,31 @@ const printSongs = (result) => {
         fragment.appendChild(clone);
     })
     listaCanciones.appendChild(fragment);
+}
+
+const newBanner = () => {
+    const albumName = document.getElementById('albumTitle');
+    const albumDescription = document.getElementById('albumDescription');
+    const albumImage = document.getElementById('albumImage');
+    albumName.textContent = infoplaylist.name;
+    albumDescription.textContent = infoplaylist.description;
+    albumImage.setAttribute('src', infoplaylist.images.items[0].sources[0].url || '');
+}
+
+const infoAlbum = async () => {
+    const data = await fetch('./api/playlists.json');
+    const play = await data.json();
+
+    play.playlists.items.forEach(element => {
+        const uriParts = element.data.uri.split(":");
+        const elementId = uriParts[uriParts.length - 1];
+        if (elementId === id) {
+            const { name, description, images } = element.data;
+            infoplaylist.name = name;
+            infoplaylist.description = description;
+            infoplaylist.images = images;
+        }
+    });
+    //console.log('INFO DE PLAYLIST', infoplaylist);
+    newBanner();
 }
